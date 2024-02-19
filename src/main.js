@@ -63,42 +63,6 @@ form.addEventListener('submit', async function(event) {
     }
 });
 
-// loadMoreBtn.addEventListener('click', async function(event) {
-//     event.preventDefault();
-//     loader.style.display = 'block';
-
-//     try {
-//         currentPage++;
-//         const data = await searchFoto(currentQuery, currentPage);
-//         if (data.hits.length > 0) {
-//             const cardHeight = document.querySelector('.image-card').getBoundingClientRect().height;
-//             renderFoto(data);
-//             window.scrollBy({
-//                 top: cardHeight * 2, // Прокручуємо на дві висоти карточки галереї
-//                 behavior: 'smooth' // Додаємо плавність
-//             });
-//         } 
-//     } catch (error) {
-//  // Якщо немає більше зображень для завантаження
-//             loadMoreBtn.style.display = 'none';
-//             iziToast.warning({
-//                 title: 'Warning',
-//                 message: 'No more images to load',
-//             });
-
-        
-//     } finally {
-//         if (gallery.querySelectorAll('.image-card').length >= totalHits) {
-//             loadMoreBtn.style.display = 'none';
-//             iziToast.info({
-//                 title: 'Info',
-//                 message: "We're sorry, but you've reached the end of search results.",
-//             });
-//         }
-//         loader.style.display = 'none';
-//     }
-// });
-
 loadMoreBtn.addEventListener('click', async function(event) {
     event.preventDefault();
     loader.style.display = 'block';
