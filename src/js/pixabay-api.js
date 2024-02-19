@@ -1,7 +1,8 @@
+// // Імпортуємо необхідний плагін
+import axios from 'axios';
 
 
-
-export function searchFoto(userValue) {
+export async function searchFoto(userValue, page = 1, perPage = 15) {
     const BASE_URL = 'https://pixabay.com';
     const END_POINT = '/api/';
     const PARAMS = new URLSearchParams({
@@ -10,17 +11,19 @@ export function searchFoto(userValue) {
         image_type: "photo",
         orientation: "horizontal",
         safesearch: true,
+        page: page,
+        per_page: perPage
     });
     const url = BASE_URL + END_POINT + "?" + PARAMS;
 
-  return fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error fetching data: ' + response.status);
-            }
-            return response.json();
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+    try {
+        const response = await axios.get(url);
+        if (!response.data.hits) {
+            throw new Error('Error fetching data: No hits');
+        }
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
 }

@@ -52,6 +52,11 @@ body {
   background: #6c8cff;
 }
 
+.button-load {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
 .container {
   margin: 0 auto;
   padding: 0 15px;
