@@ -133,18 +133,5 @@ loadMoreBtn.addEventListener('click', async function(event) {
     }
 });
 
-// Функція для додавання додаткових зображень у галерею
-function renderMorePhotos(data) {
-    const fragment = document.createDocumentFragment();
-    data.hits.forEach(image => {
-        // Створення DOM-елементів карточки тут
-        const card = document.createElement('div');
-        card.classList.add('image-card');
-        // Додавання інформації про зображення
-        // ...
-        fragment.appendChild(card);
-    });
-    // Додавання фрагмента з новими зображеннями до галереї
-    gallery.appendChild(fragment);
-}
+
 
