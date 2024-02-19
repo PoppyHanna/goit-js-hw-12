@@ -1,7 +1,7 @@
 .hero-container {
   display: flex;
-  max-width: 1440px;
-  padding: 24px 156px;
+  /* max-width: 1440px; */
+  padding: auto;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
