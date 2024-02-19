@@ -1,5 +1,5 @@
 import { searchFoto } from './js/pixabay-api.js';
-import { renderFoto } from './js/render-functions.js';
+import { renderFoto, renderMorePhotos } from './js/render-functions.js';
 
 // Імпортуємо необхідний плагін
 import iziToast from "izitoast";

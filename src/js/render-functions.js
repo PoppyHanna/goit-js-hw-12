@@ -161,7 +161,7 @@ export function renderFoto(data) {
 }
 
 // Функція для додавання додаткових зображень у галерею
-function renderMorePhotos(data) {
+export function renderMorePhotos(data) {
     const gallery = document.querySelector('.js-container');
     const fragment = document.createDocumentFragment();
     
