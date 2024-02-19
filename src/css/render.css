@@ -22,11 +22,13 @@
 }
 
 .image-info {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 5px;
-  border: 1px solid #000;
   border-top: none;
   border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  margin: 6px 10px;
+  gap: 15px;
+}
+.item-text {
+  border: 1px solid #000;
 }

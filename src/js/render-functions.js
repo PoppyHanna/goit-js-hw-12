@@ -1,149 +1,7 @@
-
 // Описаний у документації
 import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
-
-// export function renderFoto(data) {
-//     const gallery = document.querySelector('.js-container');
-//     const fragment = document.createDocumentFragment();
-
-    
-
-//     data.hits.forEach(image => {
-//         // Створюємо контейнер для карточки зображення
-//         const card = document.createElement('li');
-//         card.classList.add('image-card');
-
-//         // Створюємо посилання
-//         const link = document.createElement('a');
-//         link.href = image.largeImageURL;
-
-//         // Створюємо зображення
-//         const imgElement = document.createElement('img');
-//         imgElement.classList.add('pic-card');
-//         imgElement.src = image.webformatURL;
-//         imgElement.alt = image.tags;
-
-//         // Додаємо зображення до посилання
-//         link.appendChild(imgElement);
-
-//         // Додаємо посилання з зображенням до карточки
-//         card.appendChild(link);
-
-//         // Створюємо елементи для відображення інформації про зображення
-//         const infoContainer = document.createElement('div');
-//         infoContainer.classList.add('image-info');
-
-//         const likesInfo = document.createElement('span');
-//         likesInfo.textContent = `Likes: ${image.likes}`;
-
-//         const viewsInfo = document.createElement('span');
-//         viewsInfo.textContent = `Views: ${image.views}`;
-
-//         const commentsInfo = document.createElement('span');
-//         commentsInfo.textContent = `Comments: ${image.comments}`;
-
-//         const downloadsInfo = document.createElement('span');
-//         downloadsInfo.textContent = `Downloads: ${image.downloads}`;
-
-//         // Додаємо інформацію про зображення до контейнера для інформації
-//         infoContainer.appendChild(likesInfo);
-//         infoContainer.appendChild(viewsInfo);
-//         infoContainer.appendChild(commentsInfo);
-//         infoContainer.appendChild(downloadsInfo);
-
-//         // Додаємо контейнер для інформації до карточки
-//         card.appendChild(infoContainer);
-
-//         // Додаємо карточку до фрагменту
-//         fragment.appendChild(card);
-//     });
-
-//     // Додаємо фрагмент з карточками до галереї
-//     gallery.appendChild(fragment);
-
-//     // Ініціалізуємо SimpleLightbox для всіх зображень у галереї
-//     const lightbox = new SimpleLightbox('.js-container .image-card a', {
-//          captionsData: 'alt',
-//          captionDelay: 250,
-//     });
-//     lightbox.refresh();
-// }
-
-// // Функція для додавання додаткових зображень у галерею
-// export function renderMorePhotos(data) {
-//     const gallery = document.querySelector('.js-container');
-//     const fragment = document.createDocumentFragment();
-    
-//     data.hits.forEach(image => {
-//         // Створення DOM-елементів карточки тут
-//         const card = document.createElement('li');
-//         card.classList.add('image-card');
-        
-// //  // Сторюємо контейнер для вмісту li
-// //         const cardContainer = document.createElement('div');
-// //         cardContainer.classList.add('card-cont');
-
-// //         cardContainer.appendChild(link);
-//         //         cardContainer.appendChild(infoContainer);
-        
-
-//         // Створюємо посилання
-//         const link = document.createElement('a');
-//         link.href = image.largeImageURL;
-
-//         // Створюємо зображення
-//         const imgElement = document.createElement('img');
-//          imgElement.classList.add('pic-card');
-//         imgElement.src = image.webformatURL;
-//         imgElement.alt = image.tags;
-
-//         // Додаємо зображення до посилання
-//         link.appendChild(imgElement);
-
-//         // Додаємо посилання з зображенням до карточки
-//         card.appendChild(link);
-
-//         // Створюємо елементи для відображення інформації про зображення
-//         const infoContainer = document.createElement('div');
-//         infoContainer.classList.add('image-info');
-
-//         const likesInfo = document.createElement('span');
-//         likesInfo.textContent = `Likes: ${image.likes}`;
-
-//         const viewsInfo = document.createElement('span');
-//         viewsInfo.textContent = `Views: ${image.views}`;
-
-//         const commentsInfo = document.createElement('span');
-//         commentsInfo.textContent = `Comments: ${image.comments}`;
-
-//         const downloadsInfo = document.createElement('span');
-//         downloadsInfo.textContent = `Downloads: ${image.downloads}`;
-
-//         // Додаємо інформацію про зображення до контейнера для інформації
-//         infoContainer.appendChild(likesInfo);
-//         infoContainer.appendChild(viewsInfo);
-//         infoContainer.appendChild(commentsInfo);
-//         infoContainer.appendChild(downloadsInfo);
-
-//         // Додаємо контейнер для інформації до карточки
-//         card.appendChild(infoContainer);
-
-//         // Додаємо карточку до фрагменту
-//         fragment.appendChild(card);
-
-
-       
-
-
-//     });
-
-//     // Додаємо фрагмент з карточками до галереї
-//     gallery.appendChild(fragment);
-// }
-
-
 
 export function renderFoto(data) {
     const gallery = document.querySelector('.js-container');
@@ -170,29 +28,37 @@ export function renderFoto(data) {
         // Додаємо посилання з зображенням до карточки
         card.appendChild(link);
 
-        // Створюємо елементи для відображення інформації про зображення
+        // Створюємо елемент div для обгортки списку
         const infoContainer = document.createElement('div');
-        infoContainer.classList.add('image-info');
+        infoContainer.classList.add('item-text');
 
-        const likesInfo = document.createElement('span');
+        // Створюємо список ul
+        const infoList = document.createElement('ul');
+        infoList.classList.add('image-info');
+
+        // Створюємо елементи списку li для інформації про зображення
+        const likesInfo = document.createElement('li');
         likesInfo.textContent = `Likes: ${image.likes}`;
 
-        const viewsInfo = document.createElement('span');
+        const viewsInfo = document.createElement('li');
         viewsInfo.textContent = `Views: ${image.views}`;
 
-        const commentsInfo = document.createElement('span');
+        const commentsInfo = document.createElement('li');
         commentsInfo.textContent = `Comments: ${image.comments}`;
 
-        const downloadsInfo = document.createElement('span');
+        const downloadsInfo = document.createElement('li');
         downloadsInfo.textContent = `Downloads: ${image.downloads}`;
 
-        // Додаємо інформацію про зображення до контейнера для інформації
-        infoContainer.appendChild(likesInfo);
-        infoContainer.appendChild(viewsInfo);
-        infoContainer.appendChild(commentsInfo);
-        infoContainer.appendChild(downloadsInfo);
+        // Додаємо елементи li до списку ul
+        infoList.appendChild(likesInfo);
+        infoList.appendChild(viewsInfo);
+        infoList.appendChild(commentsInfo);
+        infoList.appendChild(downloadsInfo);
 
-        // Додаємо контейнер для інформації до карточки
+        // Додаємо список ul до елемента div
+        infoContainer.appendChild(infoList);
+
+        // Додаємо контейнер зі списком до карточки
         card.appendChild(infoContainer);
 
         // Додаємо карточку до фрагменту
@@ -201,6 +67,13 @@ export function renderFoto(data) {
 
     // Додаємо фрагмент з карточками до галереї
     gallery.appendChild(fragment);
+
+    // Ініціалізуємо SimpleLightbox для всіх зображень у галереї
+    const lightbox = new SimpleLightbox('.js-container .image-card a', {
+         captionsData: 'alt',
+         captionDelay: 250,
+    });
+    lightbox.refresh();
 }
 
 // Функція для додавання додаткових зображень у галерею
@@ -229,29 +102,37 @@ export function renderMorePhotos(data) {
         // Додаємо посилання з зображенням до карточки
         card.appendChild(link);
 
-        // Створюємо елементи для відображення інформації про зображення
+        // Створюємо елемент div для обгортки списку
         const infoContainer = document.createElement('div');
-        infoContainer.classList.add('image-info');
+        infoContainer.classList.add('item-text');
 
-        const likesInfo = document.createElement('span');
+        // Створюємо список ul
+        const infoList = document.createElement('ul');
+        infoList.classList.add('image-info');
+
+        // Створюємо елементи списку li для інформації про зображення
+        const likesInfo = document.createElement('li');
         likesInfo.textContent = `Likes: ${image.likes}`;
 
-        const viewsInfo = document.createElement('span');
+        const viewsInfo = document.createElement('li');
         viewsInfo.textContent = `Views: ${image.views}`;
 
-        const commentsInfo = document.createElement('span');
+        const commentsInfo = document.createElement('li');
         commentsInfo.textContent = `Comments: ${image.comments}`;
 
-        const downloadsInfo = document.createElement('span');
+        const downloadsInfo = document.createElement('li');
         downloadsInfo.textContent = `Downloads: ${image.downloads}`;
 
-        // Додаємо інформацію про зображення до контейнера для інформації
-        infoContainer.appendChild(likesInfo);
-        infoContainer.appendChild(viewsInfo);
-        infoContainer.appendChild(commentsInfo);
-        infoContainer.appendChild(downloadsInfo);
+        // Додаємо елементи li до списку ul
+        infoList.appendChild(likesInfo);
+        infoList.appendChild(viewsInfo);
+        infoList.appendChild(commentsInfo);
+        infoList.appendChild(downloadsInfo);
 
-        // Додаємо контейнер для інформації до карточки
+        // Додаємо список ul до елемента div
+        infoContainer.appendChild(infoList);
+
+        // Додаємо контейнер зі списком до карточки
         card.appendChild(infoContainer);
 
         // Додаємо карточку до фрагменту
