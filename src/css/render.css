@@ -1,7 +1,7 @@
 .hero-container {
   display: flex;
 
-  padding: auto;
+  padding: 25px;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
