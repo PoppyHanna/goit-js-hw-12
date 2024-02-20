@@ -3,6 +3,7 @@ import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
+
 export function renderFoto(data) {
     const gallery = document.querySelector('.js-container');
     const fragment = document.createDocumentFragment();
@@ -11,6 +12,10 @@ export function renderFoto(data) {
         // Створюємо контейнер для карточки зображення
         const card = document.createElement('li');
         card.classList.add('image-card');
+
+        // Створюємо контейнер для обгортки посилання та інформації
+        const container = document.createElement('div');
+        container.classList.add('li-cont');
 
         // Створюємо посилання
         const link = document.createElement('a');
@@ -25,10 +30,10 @@ export function renderFoto(data) {
         // Додаємо зображення до посилання
         link.appendChild(imgElement);
 
-        // Додаємо посилання з зображенням до карточки
-        card.appendChild(link);
+        // Додаємо посилання з зображенням до контейнера
+        container.appendChild(link);
 
-        // Створюємо елемент div для обгортки списку
+        // Створюємо елемент div для обгортки інформації
         const infoContainer = document.createElement('div');
         infoContainer.classList.add('item-text');
 
@@ -59,9 +64,12 @@ export function renderFoto(data) {
         infoContainer.appendChild(infoList);
 
         // Додаємо контейнер зі списком до карточки
-        card.appendChild(infoContainer);
+        container.appendChild(infoContainer);
 
-        // Додаємо карточку до фрагменту
+        // Додаємо контейнер до фрагменту
+        card.appendChild(container);
+
+        // Додаємо карточку до галереї
         fragment.appendChild(card);
     });
 
@@ -76,7 +84,10 @@ export function renderFoto(data) {
     lightbox.refresh();
 }
 
+
+
 // Функція для додавання додаткових зображень у галерею
+
 export function renderMorePhotos(data) {
     const gallery = document.querySelector('.js-container');
     const fragment = document.createDocumentFragment();
@@ -86,6 +97,10 @@ export function renderMorePhotos(data) {
         const card = document.createElement('li');
         card.classList.add('image-card');
         
+        // Створюємо контейнер для обгортки посилання та інформації
+        const container = document.createElement('div');
+        container.classList.add('li-cont');
+
         // Створюємо посилання
         const link = document.createElement('a');
         link.href = image.largeImageURL;
@@ -100,9 +115,9 @@ export function renderMorePhotos(data) {
         link.appendChild(imgElement);
 
         // Додаємо посилання з зображенням до карточки
-        card.appendChild(link);
+        container.appendChild(link);
 
-        // Створюємо елемент div для обгортки списку
+        // Створюємо елемент div для обгортки інформації
         const infoContainer = document.createElement('div');
         infoContainer.classList.add('item-text');
 
@@ -133,7 +148,10 @@ export function renderMorePhotos(data) {
         infoContainer.appendChild(infoList);
 
         // Додаємо контейнер зі списком до карточки
-        card.appendChild(infoContainer);
+        container.appendChild(infoContainer);
+
+        // Додаємо контейнер до карточки
+        card.appendChild(container);
 
         // Додаємо карточку до фрагменту
         fragment.appendChild(card);

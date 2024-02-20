@@ -10,17 +10,18 @@
 }
 
 .image-card {
-  border: 1px solid #000;
   width: 360px;
   height: 220px;
-  /* width: 310px;
-  height: 227px; */
 }
 .pic-card {
-  /* width: 310px;
-  height: 227px; */
   width: 360px;
   height: 220px;
+}
+
+.li-cont {
+  border: 2px solid #6495ed;
+  border-radius: 6px;
+  width: 360px;
 }
 
 .image-info {
@@ -30,8 +31,4 @@
   flex-direction: row;
   margin: 6px 10px;
   gap: 15px;
-}
-.item-text {
-  border: 2px solid #6495ed;
-  border-radius: 2px;
 }
