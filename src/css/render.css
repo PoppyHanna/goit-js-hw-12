@@ -3,22 +3,24 @@
 
   padding: 25px;
   flex-wrap: wrap;
-
-  align-items: flex-start;
+  justify-content: center;
   gap: 60px;
   margin: auto;
-  /* row-gap: 50px; */
+  row-gap: 70px;
 }
 
 .image-card {
   border: 1px solid #000;
-
-  width: 310px;
-  height: 227px;
+  width: 360px;
+  height: 220px;
+  /* width: 310px;
+  height: 227px; */
 }
 .pic-card {
-  width: 310px;
-  height: 227px;
+  /* width: 310px;
+  height: 227px; */
+  width: 360px;
+  height: 220px;
 }
 
 .image-info {
@@ -30,5 +32,6 @@
   gap: 15px;
 }
 .item-text {
-  border: 1px solid #000;
+  border: 2px solid #6495ed;
+  border-radius: 2px;
 }

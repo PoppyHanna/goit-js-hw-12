@@ -55,12 +55,12 @@ body {
 .button-load {
   display: flex;
   align-items: center;
-  margin: auto;
+  margin: 50px auto;
 }
 .container {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1440px;
+  /* max-width: 1440px; */
 }
 
 .loader {
