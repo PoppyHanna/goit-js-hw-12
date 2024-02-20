@@ -20,6 +20,7 @@ export function renderFoto(data) {
         // Створюємо посилання
         const link = document.createElement('a');
         link.href = image.largeImageURL;
+        link.classList.add('link-a')
 
         // Створюємо зображення
         const imgElement = document.createElement('img');
@@ -104,6 +105,7 @@ export function renderMorePhotos(data) {
         // Створюємо посилання
         const link = document.createElement('a');
         link.href = image.largeImageURL;
+         link.classList.add('link-a')
 
         // Створюємо зображення
         const imgElement = document.createElement('img');
