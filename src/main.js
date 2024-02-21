@@ -46,10 +46,18 @@ form.addEventListener('submit', async function(event) {
             });
         } else {
             totalHits = data.totalHits;
+            // Очистити попередній рендер перед новим
+            gallery.innerHTML = '';
+
             renderFoto(data);
+
             if (data.hits.length >= 15) {
                 loadMoreBtn.style.display = 'block';
             }
+
+            // Очистити значення поля вводу
+            document.getElementById('search-input').value = '';
+            
         }
     } catch (error) {
         if (gallery.innerHTML === '') {
